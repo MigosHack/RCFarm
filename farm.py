@@ -28,7 +28,7 @@ class FarmRostmomentMod(loader.Module):
 
     @loader.unrestricted
     @loader.ratelimit
-    async def farmcmd(self, message):
+    async def farm_rccmd(self, message):
         """Запустить автоматический фарминг в боте"""
         if self.tasks:
             return await message.edit("Автоматический фарминг уже запущен.")
@@ -38,7 +38,7 @@ class FarmRostmomentMod(loader.Module):
 
     @loader.unrestricted
     @loader.ratelimit
-    async def stopcmd(self, message):
+    async def stop_rccmd(self, message):
         """Остановить автоматический фарминг в боте"""
         if not self.tasks:
             return await message.edit("Автоматический фарминг не запущен.")
